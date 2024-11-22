@@ -3,18 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Nivaran - Submit Feedback</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #8e44ad, #3498db);
+            color: #333;
+        }
+
+        header {
+            background:;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            font-size: 2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 3rem auto;
+            padding: 2rem;
+            max-width: 700px;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        label {
+            font-size: 1.1rem;
+            color: #34495e;
+            font-weight: 600;
+        }
+
+        textarea, input[type="file"] {
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        textarea:focus, input[type="file"]:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            padding: 0.8rem 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(to right, #3498db, #8e44ad);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Nivaran</h1>
+        Nivaran
     </header>
     <main>
         <h2>Submit Your Feedback</h2>
         <form action="#" method="POST" id="feedbackForm">
             <label for="issueDescription">Describe the Issue:</label>
-            <textarea id="issueDescription" name="issueDescription" required></textarea>
+            <textarea id="issueDescription" name="issueDescription" placeholder="Write your issue here..." required></textarea>
 
             <label for="images">Upload Images:</label>
             <input type="file" id="images" name="images" multiple required>
@@ -23,8 +131,7 @@
         </form>
     </main>
     <footer>
-        <p>&copy; 2023 Nivaran. All rights reserved.</p>
+        &copy; 2023 Nivaran. All rights reserved.
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>

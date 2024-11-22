@@ -2,26 +2,204 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="vigit branch new-featureewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nivaran - Citizen Feedback Platform</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #8e44ad, #3498db);
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        nav a:hover {
+            background: white;
+            color: #3498db;
+            transform: scale(1.1);
+        }
+
+        /* Main Section */
+        main {
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #dcdcdc;
+        }
+
+        /* Welcome Section */
+        #welcome {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        #welcome img {
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Gallery Section */
+        .gallery-images {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gallery-images img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-images img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        #contact {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        #contact p {
+            font-size: 1.2rem;
+            color: #dcdcdc;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            background-color: #3498db;
+            color: white;
+            border-radius: 25px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+
+            .gallery-images {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #welcome {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #welcome img {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <script src="script.js"></script>
     <header>
         <h1>Nivaran</h1>
         <nav>
             <a href="login.html">Login</a>
             <a href="feedback.html">Submit Feedback</a>
             <a href="dashboard.html">Dashboard</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
         </nav>
     </header>
     <main>
-        <h2>Welcome to Nivaran</h2>
-        <p>Your platform to voice your grievances and track solutions.</p>
+        <section id="welcome">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhp4n-QEUL6PCZMvrNhgPQVLuk99tifUVC6A&s" alt="Welcome to Nivaran">
+            <div>
+                <h2>Welcome to Nivaran</h2>
+                <p>Your platform to voice your grievances, suggest improvements, and track the progress of your submissions. Through Nivaran, we empower citizens to actively engage with local authorities and work towards solutions together.</p>
+                <p>Whether it's a simple issue or a serious concern, Nivaran is here to ensure that your voice is heard, and that the necessary actions are taken. Join us today to be part of a more connected, responsive, and accountable community!</p>
+                <a href="feedback.html" class="btn">Submit Your Feedback</a>
+            </div>
+        </section>
 
         <section id="about">
             <h2>About Nivaran</h2>
@@ -32,10 +210,10 @@
         <section id="gallery">
             <h2>Gallery</h2>
             <div class="gallery-images">
-                <img src="image1.jpg" alt="Community Service" />
-                <img src="image2.jpg" alt="Feedback Session" />
-                <img src="image3.jpg" alt="Community Engagement" />
-                <img src="image4.jpg" alt="Problem Resolution" />
+                <img src="https://imgs.search.brave.com/_gPW2JA_FsLPpPvaFxWoZdHUGn2sDjGnHv1o7JHJLXU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy8z/LzMxL0RlbGhpX05v/aWRhX0RpcmVjdF9m/bHl3YXlfKFV0dGFy/X1ByYWRlc2hfLV8y/MDExLTA2LTE4KS5q/cGc" alt="Community Service" />
+                <img src="data:image/jpeg;base64,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" alt="Feedback Session" />
+                <img src="https://external-preview.redd.it/_At9pf7U3cxntz8O34kfip0TOkJDvN9my8bpTU7gL0Q.jpg?auto=webp&s=8732c7d90e2e6fc583258124a60950ce0124d0d9" alt="Community Engagement" />
+                <img src="https://www.hksconsultants.com/publicgarden_header/data1/images/publicgarden_3.jpg" alt="Problem Resolution" />
             </div>
         </section>
 
@@ -44,11 +222,20 @@
             <p>If you have any questions or need assistance, feel free to reach out to us:</p>
             <p>Email: support@nivaran.com</p>
             <p>Phone: +1 (123) 456-7890</p>
+            <a href="mailto:support@nivaran.com" class="btn">Contact Us</a>
         </section>
     </main>
     <footer>
         <p>&copy; 2023 Nivaran. All rights reserved.</p>
     </footer>
 
+    <script>
+        // JavaScript for a welcome popup on page load
+        window.onload = function() {
+            setTimeout(function() {
+                alert("Welcome to Nivaran! We are excited to have you here.");
+            }, 1000); // Show after 1 second of loading
+        };
+    </script>
 </body>
 </html>

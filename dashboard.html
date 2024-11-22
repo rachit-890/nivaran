@@ -5,21 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nivaran - Dashboard</title>
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background: linear-gradient(to bottom, #8e44ad, #3498db);
+            color: #333;
+            overflow-x: hidden;
         }
 
         header {
-            background: #007BFF;
+            background: linear-gradient(to bottom, #8e44ad, #3498db);
             color: white;
-            padding: 10px 20px;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
 
         header h1 {
             margin: 0;
+            font-size: 2.5rem;
         }
 
         nav {
@@ -30,77 +39,169 @@
             color: white;
             margin: 0 15px;
             text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            transition: background 0.3s, transform 0.3s;
         }
 
         nav a:hover {
-            text-decoration: underline;
+            background: white;
+            color: #007BFF;
+            transform: scale(1.1);
         }
 
         main {
-            padding: 20px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
         }
 
         h2 {
-            color: #007BFF;
-        }
-
-        section {
-            margin-bottom: 40px;
-        }
-
-        .stats {
-            display: flex;
-            justify-content: space-between;
+            /* color: #4facfe; */
             margin-bottom: 20px;
-        }
-
-        .stat-item {
-            background: #f2f2f2;
-            padding: 20px;
-            border-radius: 5px;
-            flex: 1;
-            margin: 0 10px;
+            font-size: 2rem;
             text-align: center;
         }
 
+        /* Stats Section */
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .stat-item {
+            background: linear-gradient(to bottom, #8e44ad, #3498db);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(33% - 20px);
+            max-width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: white;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #fff;
+        }
+
+        .stat-item p {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4facfe;
+        }
+
+        /* Table Styles */
         table {
             width: 100%;
             border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
 
-        table th, table td {
-            border: 1px solid #ddd;
-            padding: 8px;
+        table thead {
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            color: white;
+        }
+
+        table th,
+        table td {
+            padding: 15px;
             text-align: left;
         }
 
         table th {
-            background-color: #007BFF;
-            color: white;
+            font-size: 1rem;
         }
 
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        table tr:hover {
+            background: #e6f7ff;
+        }
+
+        /* Issue Categories Section */
         .issue-summary-container {
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
         }
 
         .issue-category {
-            background: #f2f2f2;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
             padding: 20px;
-            border-radius: 5px;
-            flex: 1;
-            margin: 0 10px;
+            border-radius: 15px;
             text-align: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(33% - 20px);
+            max-width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: white;
         }
 
+        .issue-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .issue-category h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            color: #fff;
+        }
+
+        .issue-category p {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        /* Footer */
         footer {
-            background: #007BFF;
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 15px 0;
             position: relative;
             bottom: 0;
             width: 100%;
+            margin-top: 30px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .stat-item,
+            .issue-category {
+                flex: 1 1 100%;
+            }
+
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
         }
     </style>
 </head>
@@ -165,4 +266,15 @@
                     </tr>
                     <tr>
                         <td>2023-10-05</td>
-                        <td>Park
+                        <td>Park maintenance</td>
+                        <td>Resolved</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Nivaran. All rights reserved.</p>
+    </footer>
+</body>
+</html>
